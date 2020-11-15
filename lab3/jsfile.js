@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if(localStorage.getItem('caseRadioLocalStorage')!=null)
     {
-     document.getElementById('right_main').style.text-transform=localStorage.getItem('caseRadioLocalStorage');
+     document.getElementById('right_main').style=localStorage.getItem('caseRadioLocalStorage');
     }
     butt.onclick = function () {
       const buttons = document.querySelectorAll('input[name="reg"]');
@@ -36,15 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
               selectedValue = radio.value;
               switch (selectedValue) {
                 case 'upper':
-                  document.getElementById('right_main').style.text-transform='uppercase';
+                  document.getElementById('right_main').style="text-transform:capitalize";
                       localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
                   break;
                 case 'none':
-                  document.getElementById('right_main').style.text-transform='none';
+                  document.getElementById('right_main').style="text-transform:none";
                       localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
                   break;
                 default:
-                  document.getElementById('right_main').style.text-transform='none';
+                  document.getElementById('right_main').style="text-transform:none";
                   break;
               }
           }
