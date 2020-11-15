@@ -51,6 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     
+    document.addEventListener('change', (event) => {
+  	alert('rickroll');
+        
+  })
+    
 })
 
 const swapText = (id1, id2) => {
