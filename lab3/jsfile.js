@@ -2,22 +2,28 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     if (performance.navigation.type == 1) { //on reload
-    if(checkCookie('divisors')){
-      alert(`These Cookies have been created on this page: \n${document.cookie} \n They will be deleted`);
-      setCookie('divisors','',3);
-      alert('Cookies were successfully deleted.');
+    if (checkCookie('divisors')){
+        if (prompt(`These Cookies have been created on this page: \n${document.cookie} \n Do you want to save them?`)) {
+            document.querySelector('#numForm').remove();
+            alert('Cookies were saved. Page will be reloaded')
+        }
+        else {
+            setCookie('divisors','',3);
+            alert('Cookies were successfully deleted.');
+        }
       }
     }
-    swapText('links_class', 'left_bottom');
+    swapText('links_class', 'left_bottom');  // complete task 1
     const a = 3;
     const b = 2;
     const height = 2;
     findAreaOfTrapezoid(a, b, height, 'middle_text'); // complete task 2
     
-    document.querySelector('#numBtn').addEventListener('click', () => {
-        huinya(document.getElementById('numInput').value);
-        alert(checkCookie("divisors"));
+    document.querySelector('#numBtn').addEventListener('click', () => {  // complete task 3
+        find_divisors(document.getElementById('numInput').value);
+        alert(document.cookie);
     });
+    
     
 })
 
@@ -36,7 +42,7 @@ const findAreaOfTrapezoid = (sideA, sideB, heightTr, outputId) => {
   );
  }
 
-const huinya = (chislo) => {
+const find_divisors = (chislo) => {
     let massive = [];
     for (let i = 1; i <= chislo; i++) {
         if (chislo % i == 0) {
