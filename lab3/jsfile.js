@@ -24,6 +24,32 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(document.cookie);
     });
     
+    if(localStorage.getItem('caseRadioLocalStorage')!=null)
+    {
+     document.getElementById('right_main').style.text-transform=localStorage.getItem('caseRadioLocalStorage');
+    }
+    butt.onclick = function () {
+      const buttons = document.querySelectorAll('input[name="reg"]');
+      let selectedValue;
+      for (const radio of buttons) {
+          if (radio.checked) {
+              selectedValue = radio.value;
+              switch (selectedValue) {
+                case 'upper':
+                  document.getElementById('right_main').style.text-transform='uppercase';
+                      localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
+                  break;
+                case 'none':
+                  document.getElementById('right_main').style.text-transform='none';
+                      localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
+                  break;
+                default:
+                  document.getElementById('right_main').style.text-transform='none';
+                  break;
+              }
+          }
+      }
+    }
     
 })
 
