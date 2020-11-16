@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     findAreaOfTrapezoid(a, b, height, 'middle_text'); // complete task 2
     
     document.querySelector('#numBtn').addEventListener('click', () => {  // complete task 3
-        find_divisors(document.getElementById('numInput').value);
+        find_divisors(document.getElementById('#numInput').value);
         alert(document.cookie);
     });
     
