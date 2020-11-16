@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (performance.navigation.type == 1) { //on reload
     if (checkCookie('divisors')){
-        if (prompt(`These Cookies have been created on this page: \n${document.cookie} \n Do you want to save them?`)) {
+        if (confirm(`These Cookies have been created on this page: \n${document.cookie} \n Do you want to save them?`)) {
             document.querySelector('#numForm').remove();
             alert('Cookies were saved. Page will be reloaded')
         }
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (radio.checked) {
               selectedValue = radio.value;
               switch (selectedValue) {
-                case 'upper':
+                case 'text-transform:capitalize':
                   document.getElementById('right_main').style="text-transform:capitalize";
                   localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
                   break;
