@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
               switch (selectedValue) {
                 case 'upper':
                   document.getElementById('right_main').style="text-transform:capitalize";
-                      localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
+                  localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
                   break;
                 case 'none':
                   document.getElementById('right_main').style="text-transform:none";
-                      localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
+                  localStorage.setItem('caseRadioLocalStorage',`${radio.value}`);
                   break;
                 default:
                   document.getElementById('right_main').style="text-transform:none";
@@ -51,13 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     
-    document.addEventListener('change', (event) => {
-  	alert('rickroll');
+    //document.addEventListener('change', (event) => {
+  	//alert('rickroll');
         
   })
     
-})
-
 const swapText = (id1, id2) => {
   let block1 = document.getElementById(id1);
   let block2 = document.getElementById(id2);
