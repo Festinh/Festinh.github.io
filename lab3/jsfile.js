@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (performance.navigation.type == 1) { //on reload
     if (checkCookie('divisors')){
         if (confirm(`These Cookies have been created on this page: \n${document.cookie} \n Do you want to save them?`)) {
-            document.querySelector('#divisors').remove();
+            document.querySelector('#numInput').remove();
             alert('Cookies were saved. Page will be reloaded')
         }
         else {
